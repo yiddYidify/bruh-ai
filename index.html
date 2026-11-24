@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090b13">
+<title>Bruh AI — Your space to create</title>
+<style>
+:root{--bg:#090b13;--surface:#101522;--surface2:#151c2c;--line:#252e43;--text:#f5f6ff;--muted:#929bb1;--purple:#a18cff;--cyan:#69dfd0;--green:#8ee2bd}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 75% -15%,#33265b 0,transparent 36%),radial-gradient(ellipse at 0 45%,#102c38 0,transparent 28%),var(--bg);color:var(--text);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button,input,textarea{font:inherit}button{cursor:pointer}.shell{min-height:100vh}.sidebar{position:fixed;inset:0 auto 0 0;width:250px;background:rgba(10,13,22,.94);border-right:1px solid var(--line);padding:22px 16px;display:flex;flex-direction:column;z-index:5;backdrop-filter:blur(18px)}
+.brand{display:flex;align-items:center;gap:11px;padding:0 8px 25px}.mark{height:42px;width:42px;border-radius:14px;background:linear-gradient(135deg,#b29cff,#62e1cf);display:grid;place-items:center;color:#101322;font-size:23px;font-weight:950;box-shadow:0 8px 28px #9b83ff30}.brand b{font-size:19px;letter-spacing:-.5px}.brand small{display:block;color:var(--muted);font-size:11px;margin-top:-2px}
+.navtitle{font-size:10px;letter-spacing:1.5px;color:#6f7890;font-weight:800;padding:10px 10px 7px}.nav{display:grid;gap:4px}.nav button{background:none;border:0;color:#aeb7cb;text-align:left;border-radius:10px;padding:10px 11px;display:flex;align-items:center;gap:11px}.nav button:hover,.nav button.active{background:#1b2031;color:#fff}.nav button.active{box-shadow:inset 2px 0 var(--purple)}.ico{width:20px;text-align:center;color:#b6a9ff;font-size:16px}.sidebar-bottom{margin-top:auto;border:1px solid var(--line);border-radius:14px;background:#111725;padding:13px;font-size:11px;color:var(--muted)}.sidebar-bottom strong{display:block;color:#e8eaff;font-size:12px;margin-bottom:4px}
+main{margin-left:250px;max-width:1500px;padding:25px clamp(20px,4vw,58px) 60px}.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:62px}.location{font-size:12px;color:var(--muted)}.top-actions{display:flex;gap:9px;align-items:center}.pill{border:1px solid #28544e;background:#10231f;color:#8ee2ce;border-radius:30px;padding:6px 11px;font-size:11px}.ghost{background:#151b29;border:1px solid var(--line);color:#dfe3f3;border-radius:9px;padding:8px 12px;font-size:12px}
+.hero{max-width:850px;margin:0 auto 42px;text-align:center}.eyebrow{display:inline-flex;align-items:center;gap:7px;border:1px solid #393252;background:#19152a;color:#c7baff;border-radius:30px;padding:6px 12px;font-size:11px;margin-bottom:20px}.spark{color:#ffe49a}h1{font-size:clamp(38px,6vw,66px);letter-spacing:-2.8px;line-height:1.03;margin:0 0 17px}.grad{background:linear-gradient(95deg,#c2b3ff 5%,#8ed9e6 54%,#83e6c7);color:transparent;background-clip:text}.hero p{color:#a7aec1;font-size:16px;max-width:600px;margin:0 auto 25px}.searchbox{max-width:650px;margin:auto;background:#141a29;border:1px solid #343c55;border-radius:15px;padding:7px;display:flex;gap:8px;box-shadow:0 15px 55px #0005}.searchbox input{flex:1;min-width:0;background:transparent;border:0;outline:0;color:white;padding:10px 12px}.searchbox input::placeholder{color:#778199}.searchbox button,.primary{border:0;background:linear-gradient(110deg,#b09aff,#6de0d0);color:#101322;font-weight:800;border-radius:10px;padding:10px 17px}.quick{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:14px}.quick button{border:1px solid #293247;background:#101522;color:#aeb8ce;border-radius:30px;padding:6px 10px;font-size:11px}.quick button:hover{border-color:#8f7be1;color:white}
+.section{max-width:1100px;margin:0 auto 35px}.section-head{display:flex;align-items:end;justify-content:space-between;margin:0 0 15px}.section-head h2{font-size:18px;letter-spacing:-.3px;margin:0}.section-head p{font-size:11px;color:var(--muted);margin:3px 0 0}.section-head a{font-size:11px;color:#b7a9ff;text-decoration:none}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.card{position:relative;text-align:left;border:1px solid var(--line);background:linear-gradient(145deg,#171e2e,#101522);border-radius:16px;padding:17px;color:var(--text);min-height:153px;transition:.2s;overflow:hidden}.card:after{content:"";position:absolute;width:100px;height:100px;border-radius:50%;background:#9a83ff0b;right:-30px;top:-35px}.card:hover{transform:translateY(-3px);border-color:#7163ac;box-shadow:0 12px 30px #0003}.card-icon{width:38px;height:38px;border-radius:12px;background:#292342;display:grid;place-items:center;font-size:18px;margin-bottom:12px}.card h3{font-size:14px;margin:0 0 4px}.card p{font-size:11px;color:var(--muted);margin:0;max-width:240px}.tag{position:absolute;top:14px;right:13px;font-size:9px;color:#9ce4d6;background:#142a28;border:1px solid #28504a;padding:3px 7px;border-radius:20px}
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.benefit{border:1px solid var(--line);background:#101522b8;border-radius:14px;padding:15px}.benefit b{display:block;font-size:12px;margin:7px 0 3px}.benefit p{margin:0;color:var(--muted);font-size:11px}.benefit span{font-size:18px}
+.workspace{display:none;max-width:900px;margin:0 auto;border:1px solid var(--line);border-radius:18px;background:#111725;padding:21px}.workspace.show{display:block}.workspace h2{margin:0 0 4px;font-size:20px}.workspace>p{margin:0 0 17px;color:var(--muted);font-size:12px}.chatlog{height:270px;overflow:auto;border:1px solid var(--line);background:#0b101a;border-radius:12px;padding:13px;margin-bottom:12px}.bubble{max-width:84%;padding:10px 12px;border-radius:12px;margin:7px 0;font-size:12px;white-space:pre-wrap;overflow-wrap:anywhere}.bot{background:#20243a;color:#e8e6ff}.user{background:#1b3a3a;color:#e0fff8;margin-left:auto}.compose{display:flex;gap:8px}.compose input,.field{width:100%;background:#0b101a;border:1px solid #30394e;border-radius:10px;padding:12px;color:#fff;outline:0}.compose input:focus,.field:focus{border-color:var(--purple)}.compose button{border:0;border-radius:10px;padding:0 18px;background:linear-gradient(110deg,#b09aff,#6de0d0);font-weight:800;color:#111}.field{min-height:110px;resize:vertical}.toolbox{display:grid;gap:10px}.note{font-size:11px;color:#8994ab}.toolresult{border:1px dashed #39435c;border-radius:10px;padding:12px;color:#aeb8ce;font-size:12px;min-height:45px}
+footer{text-align:center;color:#69738a;font-size:10px;margin:44px 0 0}
+@media(max-width:900px){.sidebar{width:210px}main{margin-left:210px;padding-left:22px;padding-right:22px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.sidebar{position:sticky;top:0;width:100%;height:auto;padding:10px 13px;border-right:0;border-bottom:1px solid var(--line)}.brand{padding:0 3px 9px}.mark{width:34px;height:34px;border-radius:11px}.brand b{font-size:16px}.navtitle,.sidebar-bottom{display:none}.nav{display:flex;overflow-x:auto;gap:3px}.nav button{white-space:nowrap;padding:7px 9px;font-size:11px}.ico{width:auto}main{margin:0;padding:18px 14px 40px}.topbar{margin-bottom:38px}.hero{margin-bottom:34px}h1{letter-spacing:-1.6px}.hero p{font-size:14px}.cards{gap:9px}.card{padding:13px;min-height:145px}.benefits{grid-template-columns:1fr}.section-head{align-items:start}.topbar{margin-bottom:32px}}
+@media(max-width:390px){.cards{grid-template-columns:1fr}.card{min-height:120px}.top-actions .ghost{display:none}}
+</style>
+</head>
+<body><div class="shell">
+<aside class="sidebar">
+ <div class="brand"><div class="mark">B</div><div><b>Bruh AI</b><small>Your space to create</small></div></div>
+ <div><div class="navtitle">WORKSPACE</div><nav class="nav">
+  <button class="active" data-view="home"><span class="ico">⌂</span>Home</button>
+  <button data-view="chat"><span class="ico">✧</span>AI Chat</button>
+  <button data-view="writer"><span class="ico">✎</span>AI Writer</button>
+  <button data-view="study"><span class="ico">▤</span>Study Buddy</button>
+  <button data-view="code"><span class="ico">⌘</span>AI Coder</button>
+ </nav></div>
+ <div><div class="navtitle">CREATIVE STUDIO</div><nav class="nav">
+  <button data-view="image"><span class="ico">▧</span>Image Studio</button>
+  <button data-view="video"><span class="ico">▶</span>Video Studio</button>
+ </nav></div>
+ <div class="sidebar-bottom"><strong>✦ A little note</strong>Try Bruh AI without signing up. Your first version is a preview; live AI connections are the next build step.</div>
+</aside>
+<main>
+ <div class="topbar"><div class="location">Workspace <span style="color:#59647b">/</span> <span id="crumb">Home</span></div><div class="top-actions"><span class="pill">● Free starter</span><button class="ghost" id="homebtn">Home</button></div></div>
+ <section id="home">
+  <div class="hero">
+   <div class="eyebrow"><span class="spark">✦</span> YOUR ALL-IN-ONE AI WORKSPACE</div>
+   <h1>Big ideas start with<br><span class="grad">“what if?”</span></h1>
+   <p>Meet your creative sidekick. Explore ideas, get help with learning, write better, and build something brilliant — all in one place.</p>
+   <div class="searchbox"><input id="toolsearch" placeholder="What do you want to do today?"><button id="searchbtn">Explore tools ↗</button></div>
+   <div class="quick"><button data-open="chat">Ask a question</button><button data-open="writer">Write something</button><button data-open="study">Study smarter</button><button data-open="code">Build with code</button></div>
+  </div>
+  <div class="section">
+   <div class="section-head"><div><h2>Explore your tools</h2><p>Pick a workspace and make something happen.</p></div><a href="#" id="clearsearch">Clear search</a></div>
+   <div class="cards" id="cards">
+    <button class="card" data-open="chat"><div class="card-icon">✧</div><h3>AI Chat</h3><p>Ask questions, brainstorm, and explore new ideas.</p><span class="tag">Popular</span></button>
+    <button class="card" data-open="writer"><div class="card-icon">✎</div><h3>AI Writer</h3><p>Draft, rewrite, summarize, and find the right words.</p></button>
+    <button class="card" data-open="study"><div class="card-icon">▤</div><h3>Study Buddy</h3><p>Understand topics, make quizzes, and revise smarter.</p><span class="tag">Student pick</span></button>
+    <button class="card" data-open="image"><div class="card-icon">▧</div><h3>Image Studio</h3><p>Turn a creative idea into a detailed image prompt.</p></button>
+    <button class="card" data-open="code"><div class="card-icon">⌘</div><h3>AI Coder</h3><p>Understand code, plan projects, and debug with help.</p></button>
+    <button class="card" data-open="video"><div class="card-icon">▶</div><h3>Video Studio</h3><p>Shape video concepts, hooks, and storyboards.</p></button>
+   </div>
+  </div>
+  <div class="section">
+   <div class="section-head"><div><h2>Made for getting things done</h2><p>Simple details that make a useful workspace.</p></div></div>
+   <div class="benefits">
+    <div class="benefit"><span>⚡</span><b>Jump straight in</b><p>Explore the tools without creating an account first.</p></div>
+    <div class="benefit"><span>◈</span><b>One clear workspace</b><p>Keep writing, learning, coding, and creative tools together.</p></div>
+    <div class="benefit"><span>⌁</span><b>Works on your screen</b><p>A responsive layout for desktop, tablet, and mobile.</p></div>
+   </div>
+  </div>
+ </section>
+ <section class="workspace" id="workspace">
+  <h2 id="worktitle">AI Chat</h2><p id="workdesc">Your creative sidekick is ready.</p>
+  <div id="chatarea">
+   <div class="chatlog" id="chatlog"><div class="bubble bot">Hey! Welcome to Bruh AI. 👋 This is the first interface preview. We'll connect a real AI model in the next step.</div></div>
+   <div class="compose"><input id="message" placeholder="Message Bruh AI..." autocomplete="off"><button id="send">Send</button></div>
+  </div>
+  <div id="toolarea" class="toolbox" hidden><textarea class="field" id="prompt" placeholder="Tell Bruh AI what you want to create..."></textarea><button class="primary" id="makepreview">Create my prompt</button><div class="toolresult" id="result">Your prepared prompt will appear here.</div><div class="note">Preview only: this tool is not connected to an AI service yet. Your text stays in this page.</div></div>
+ </section>
+ <footer>Bruh AI · Your space to create · Starter preview</footer>
+</main></div>
+<script>
+const names={home:"Home",chat:"AI Chat",writer:"AI Writer",study:"Study Buddy",code:"AI Coder",image:"Image Studio",video:"Video Studio"};
+const descriptions={chat:"Ask questions, explore ideas, and get clear explanations.",writer:"Draft, rewrite, summarize, or brainstorm your next piece of writing.",study:"Turn a topic into a simple explanation, revision notes, or quiz idea.",code:"Plan a project, understand code, or describe a coding problem.",image:"Describe the image you imagine and shape a detailed generation prompt.",video:"Develop a video concept, opening hook, storyboard, or script."};
+let current="home";
+function view(v){current=v;document.querySelectorAll("[data-view]").forEach(x=>x.classList.toggle("active",x.dataset.view===v));document.getElementById("crumb").textContent=names[v];document.getElementById("home").style.display=v==="home"?"block":"none";let w=document.getElementById("workspace");w.classList.toggle("show",v!=="home");if(v==="home")return;document.getElementById("worktitle").textContent=names[v];document.getElementById("workdesc").textContent=descriptions[v];document.getElementById("chatarea").hidden=v!=="chat";document.getElementById("toolarea").hidden=v==="chat";document.getElementById("prompt").placeholder=v==="writer"?"Example: Write a friendly introduction for my new project...":v==="study"?"Example: Explain photosynthesis in simple steps...":v==="code"?"Example: Help me plan a simple portfolio website...":v==="image"?"Example: A dreamy futuristic city at sunset, cinematic lighting...":"Example: A 30-second video about five surprising space facts...";document.getElementById("result").textContent="Your prepared prompt will appear here."}
+document.querySelectorAll("[data-view]").forEach(b=>b.addEventListener("click",()=>view(b.dataset.view)));document.querySelectorAll("[data-open]").forEach(b=>b.addEventListener("click",()=>view(b.dataset.open)));document.getElementById("homebtn").onclick=()=>view("home");
+function send(){let input=document.getElementById("message"),v=input.value.trim();if(!v)return;let log=document.getElementById("chatlog");let u=document.createElement("div");u.className="bubble user";u.textContent=v;log.appendChild(u);let a=document.createElement("div");a.className="bubble bot";a.textContent="Thanks for trying Bruh AI! This preview isn't connected to a live AI model yet. In the next build step we'll connect the chat securely to an AI provider.";log.appendChild(a);input.value="";log.scrollTop=log.scrollHeight}
+document.getElementById("send").onclick=send;document.getElementById("message").addEventListener("keydown",e=>{if(e.key==="Enter")send()});
+document.getElementById("makepreview").onclick=()=>{let v=document.getElementById("prompt").value.trim();document.getElementById("result").textContent=v?"Prompt ready to use when an AI service is connected:\n\n"+v:"Write an idea in the box first."};
+function filter(){let q=document.getElementById("toolsearch").value.toLowerCase().trim(),count=0;document.querySelectorAll("#cards .card").forEach(c=>{let show=!q||c.innerText.toLowerCase().includes(q);c.style.display=show?"block":"none";if(show)count++});document.querySelector(".section-head a").textContent=count?"Clear search":"No matching tools — clear search"}
+document.getElementById("searchbtn").onclick=filter;document.getElementById("toolsearch").addEventListener("input",filter);document.getElementById("clearsearch").onclick=e=>{e.preventDefault();document.getElementById("toolsearch").value="";filter()};
+</script></body></html>
